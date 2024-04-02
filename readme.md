@@ -29,6 +29,8 @@
 2. 🧩 **Install dependencies** with `npm install`.
 3. 🏁 **Start the server** with `npm start`.
 4. 🌐 **Load the Chrome extension** into your browser. <sub>You can follow the instructions [here](https://developer.chrome.com/docs/extensions/mv3/getstarted/#manifest) to learn how to add extensions locally.</sub>
+5. ⚙️ **Add a `.env` file** with the necessary environment variables. <sub>Refer to the instructions [here](https://www.geeksforgeeks.org/how-to-create-and-use-env-files-in-python/) for details on setting up the `.env` file.</sub>
+
 
 
 ## 🚀 **Usage**
