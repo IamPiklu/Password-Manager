@@ -38,6 +38,9 @@
 5. Click 📂**Save** to save the password or ♻️**Regenerate** to generate a new password.
 6. 🔍 You can retrieve the stored password for the current site by clicking **'Fetch Password'**.
 
+## 📝 **Note**
+🎓 This project is for **educational purposes only**. Be sure to understand the security implications before using it for personal passwords. 🔐
+
 ## 📚 Explanation:
  
 ### 📄 `index.html`
@@ -95,8 +98,7 @@ This JavaScript file powers a Chrome extension that generates and fetches passwo
 
 
 
-## 📝 **Note**
-🎓 This project is for **educational purposes only**. Be sure to understand the security implications before using it for personal passwords. 🔐
+
 
 ## 📜 **License**
 🔖 This project is licensed under the [**MIT License**](LICENSE).
