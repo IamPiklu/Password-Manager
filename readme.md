@@ -7,7 +7,16 @@
 - 🔐 **Generate a password** based on user preferences (length, include digits, include special characters).
 - 💾 **Store the generated password** for a specific site in a MongoDB database.
 - 📤 **Retrieve the stored password** for a specific site from the database.
-- 🛡️ **Encrypt passwords** before storing and decrypt them before sending to the user for security.
+- 🛡️ **Encrypt passwords** before storing and decrypt them before sending to the user for security. The encryption process in `app.js` is handled by a module called `crypto-js`. Here's how it works:
+  1. 🗝️ **Key Generation**: A secret key is generated. This key is used for both encryption and decryption processes. It's important to keep this key secure, as anyone with access to it can decrypt the passwords.
+
+  2. 🔐 **Encryption**: When a password is received from the client, it is encrypted using the `crypto-js.AES.encrypt` function. This function takes the plaintext password and the secret key as inputs and returns the encrypted password. The encrypted password is then stored in the database. This ensures that even if someone gains unauthorized access to the database, they won't be able to read the passwords.
+
+  3. 🔓 **Decryption**: When a password is requested by the client, it is fetched from the database and decrypted using the `crypto-js.AES.decrypt` function. This function takes the encrypted password and the secret key as inputs and returns the plaintext password. The plaintext password is then sent to the client.
+
+  4. 🚫 **Error Handling**: If there's an error during the encryption or decryption process, the error is caught and handled appropriately. This ensures that the application doesn't crash and the user is informed of the issue.
+
+Remember, encryption is a crucial part of any application that handles sensitive data. It's like a lock that keeps your secrets safe from prying eyes.
 
 ## 🛠️ **Technologies Used**
 
