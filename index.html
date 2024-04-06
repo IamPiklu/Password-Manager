@@ -10,26 +10,33 @@
     <h1 class="text-2xl font-bold mb-6 text-center">Password Generator</h1>
     <div id="home-section" class="space-y-4">
       <button id="go-to-generate" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Generate Password</button>
-      <button id="go-to-fetch" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Fetch Password</button>
+      <button id="go-to-fetch" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 ">Fetch Password</button>
     </div>
     <div id="generate-section" class="space-y-4" style="display: none;">
-      <input id="length" type="number" placeholder="Enter password length"
-        class="w-full p-2 border border-blue-300 rounded">
-      <label class="flex items-center space-x-2">
+      <input id="length" type="number" placeholder="Enter password length" class="w-full p-2 border border-blue-300 rounded">
+      <label class="flex items-center space-x-2" id="dig">
         <input id="useDigits" type="checkbox" class="form-checkbox">
         <span>Include digits</span>
       </label>
-      <label class="flex items-center space-x-2">
+      <label class="flex items-center space-x-2" id="sp">
         <input id="useSpecialChars" type="checkbox" class="form-checkbox">
         <span>Include special characters</span>
       </label>
-      <p id="password" class="text-center font-mono text-lg"></p>
+      <div id="generated-password-container" style="display: none;">
+        <p id="generated-password" class="text-center font-mono text-lg"></p>
+        <div class="flex justify-center space-x-2 mt-4">
+          <button id="save-password" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Save Password</button>
+          <button id="regenerate-password" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Regenerate</button>
+        </div>
+      </div>
       <button id="generate" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Generate</button>
       <button id="back-to-home-from-generate" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Back to Home</button>
     </div>
     <div id="fetch-section" class="space-y-4" style="display: none;">
-      <button id="fetch" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Fetch Password</button>
-      
+      <div id="password-container" style="display: none;">
+        <p id="password" class="text-center font-mono text-lg"></p>
+      </div>
+      <button id="fetch" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 ">Fetch Password</button>
       <button id="back-to-home-from-fetch" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Back to Home</button>
     </div>
   </div>
