@@ -1,3 +1,4 @@
 node_modules
 .env
 passwordgen.py
+popup_nw.js
