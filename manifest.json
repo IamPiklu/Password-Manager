@@ -4,7 +4,14 @@
   "name": "Password Generator",
   "version": "1.0",
   "action": {
-    "default_popup": "index.html"
+    "default_popup": "index.html",
+    "default_icon": "images/pass2.png",
+    
+    "icons":{
+      "16": "images/pass.png",
+      "48": "images/pass2.png",
+      "128": "images/pass3.png"
+    }
   },
   "permissions": ["activeTab", "tabs"],
   "content_security_policy": {

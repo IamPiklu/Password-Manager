@@ -3,7 +3,6 @@ const express = require('express');
 const cors = require('cors');
 const MongoClient = require('mongodb').MongoClient;
 const crypto = require('crypto');
-
 const app = express();
 app.use(cors());  // Enable CORS
 

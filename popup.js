@@ -34,16 +34,20 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('generate').addEventListener('click', async function() {
     // Get the length of the password from the input field
     var length = document.getElementById('length').value;
-    
+
+    // Get the state of the checkboxes
+    var useDigits = document.getElementById('useDigits').checked;
+    var useSpecialChars = document.getElementById('useSpecialChars').checked;
+
     // Query the active tab
     chrome.tabs.query({active: true, currentWindow: true}, async function(tabs) {
       // Get the URL of the active tab
       var site = tabs[0].url;
       console.log('Site: ' + site);
-  
+
       // Generate a password of the specified length
-      var password = generatePassword(length);
-  
+      var password = generatePassword(length, useDigits, useSpecialChars);
+
       // Send a POST request to store the password for the site
       fetch('http://localhost:3000/storePassword', {
         method: 'POST',
@@ -61,12 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Display the generated password and hide some elements
         document.getElementById('generated-password').textContent = password;
         document.getElementById('generated-password-container').style.display = 'block';
-  
+
         document.getElementById('generate').style.display = 'none';
         document.getElementById('length').style.display = 'none';
         document.getElementById('dig').style.display = 'none';
         document.getElementById('sp').style.display = 'none';
-  
+
         // Show the buttons for regenerating the password, saving the password, and going back to home
         document.getElementById('regenerate-password').style.display = 'block';
         document.getElementById('save-password').style.display = 'block';
@@ -128,6 +132,14 @@ document.addEventListener('DOMContentLoaded', function() {
           document.getElementById('password').textContent = data.password;
           document.getElementById('password-container').style.display = 'block';
           document.getElementById('fetch').style.display = 'none';
+
+          // Add a heading for the password
+          var passwordHeading = document.createElement('h1');
+          passwordHeading.textContent = 'Your Password';
+          passwordHeading.style.color = '#4CAF50'; // Change the color of the text
+          passwordHeading.style.fontFamily = 'Arial, sans-serif'; // Change the font of the text
+          passwordHeading.style.textAlign = 'center'; // Center the text
+          document.getElementById('password-container').prepend(passwordHeading);
         } else {
           // Hide the password container and display a message if no password was found
           document.getElementById('password-container').style.display = 'none';
